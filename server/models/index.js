@@ -18,6 +18,27 @@ const Transaction = (sequelize) => {
   })
 };
 
+const User = (sequelize) => {
+  return sequelize.define("users", {
+    fullName: {
+      type: STRING
+    },
+    firstName: {
+      type: STRING
+    },
+    lastName: {
+      type: STRING
+    },
+    picture: {
+      type: STRING
+    },
+    email: {
+      type: STRING
+    },
+  })
+};
+
+
 const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
   host: process.env.DB_HOST,
   dialect: "postgres",
@@ -35,4 +56,5 @@ const dbConnector = {};
 
 dbConnector.sequelize = sequelize;
 dbConnector.transactions = Transaction(sequelize)
+dbConnector.users = User(sequelize)
 export const db = dbConnector;

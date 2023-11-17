@@ -2,6 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import cors  from 'cors';
 import { routes } from './routes/transactions.routes.js';
+import { authRoutes } from './routes/authentication.routes.js';
 import { db } from './models/index.js'
 
 const app = express();
@@ -13,7 +14,7 @@ app.use(
         extended: true,
     }),
 );
-db.sequelize.sync()
+db.sequelize.sync({ force: true })
     .then(() => {
         console.log("Synced db.");
     })
@@ -21,6 +22,7 @@ db.sequelize.sync()
         console.log("Failed to sync db: " + err.message);
     });
 
+app.use(authRoutes);
 app.use(routes);
 
 const PORT = process.env.PORT || 3001;
