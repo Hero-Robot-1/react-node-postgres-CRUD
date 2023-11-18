@@ -11,7 +11,7 @@ const HeaderProfileView = ({ user }) => {
           width="30px"
           height="30px"
           src={ user.picture }
-          style={{ cursor: "pointer" }}
+          style={{ cursor: "pointer", borderRadius: 30 / 2 }}
         />
       </Box>
 

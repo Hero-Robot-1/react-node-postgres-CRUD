@@ -9,6 +9,8 @@ import UpdateTransaction from "./scenes/transactions/update-transaction";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
 import { Landing, Login, SignUp, Home } from "./scenes/authentication";
+import AccountMenu from "./scenes/global/AccountMenu";
+
 import React, { useEffect } from "react";
 
 function App() {

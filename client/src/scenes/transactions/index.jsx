@@ -1,6 +1,6 @@
 import {Box, useTheme} from "@mui/material";
 import { useAccount } from "wagmi";
-import Header from "../../components/Header";
+import Header from "../global/Header";
 import { DataGrid } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
 import React, { useEffect, useState } from 'react';

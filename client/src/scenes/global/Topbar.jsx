@@ -4,9 +4,8 @@ import { ColorModeContext, tokens } from "../../theme";
 import InputBase from "@mui/material/InputBase";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
-import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchIcon from "@mui/icons-material/Search";
-import HeaderProfileView from "../../components/HeaderProfileView";
+import AccountMenu from "./AccountMenu";
 
 const Topbar = ({ user }) => {
   const theme = useTheme();
@@ -30,10 +29,7 @@ const Topbar = ({ user }) => {
           )}
         </IconButton>
 
-        <IconButton>
-            { user?.email ? (<HeaderProfileView user={user}/>): (<PersonOutlinedIcon />)}
-        </IconButton>
-
+        <AccountMenu user={user}/>
       </Box>
     </Box>
   );
